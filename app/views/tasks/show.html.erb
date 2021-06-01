@@ -1,0 +1,26 @@
+<h1>THE TASKS</h1>
+
+
+<ul>
+  <p><%= @task.title %></p> <p><%= @task.details %> -
+    <% if @task.completed = true%>
+    <%= "task done" %>
+    <% else %>
+    <%= "task not done" %>
+    <% end %>
+
+
+
+    </p>
+    <li><%= link_to "See all", tasks_path %></li>
+    <li><%= link_to "Edit this task", edit_task_path %></li>
+    <li>
+      <%= link_to task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } do %>
+        <i class="far fa-trash-alt"></i>
+       <% end %>
+    </li>
+
+
+</ul>
